@@ -1,0 +1,21 @@
+
+Joinpoint :
+All the eligible places where an advice can be applied
+In spring , all public methods defined in spring - managed beans are eligible joinpoint, so a constructor cannot be a joinpoint
+
+Pointcut:
+The actual defines subset of joinpoint where advice is applied. So all pointcuts are joinpoints,
+We define this subset using poincut language and the defination is called pointcut
+
+Aspect:
+Combines pointcut and advice
+
+Advice:
+The functionality which we want to apply ata pointcut
+Before
+After
+AfterReturning
+AfterThrowing
+Around
+
+When a Aspect is used, spring create a proxy in front of all its aspect marked beans and any call to these methods will go through these proxies.

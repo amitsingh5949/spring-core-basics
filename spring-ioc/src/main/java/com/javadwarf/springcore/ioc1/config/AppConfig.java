@@ -11,8 +11,9 @@ import javax.sql.DataSource;
 @Configuration
 @Import(DataSourceConfig.class)
 // multiple config classes can be imported by passing an array of config files @Import({,}),
-// if importing the you need to use @Autowired or pass the bean in constructor of the bean that is going to use it
 //@ImportResource() use to import configuration from xm file
+// if importing then you need to use @Autowired or pass the bean in constructor of the bean that is going to use it
+
 public class AppConfig {
 
     @Autowired

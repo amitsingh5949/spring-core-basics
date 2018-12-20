@@ -1,7 +1,5 @@
-package com.javadwarf.springcore.ioc3.beans;
+package com.javadwarf.springcore.aop1.beans;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
 import javax.sql.DataSource;
 
 public class BasketBall implements Game {
@@ -11,24 +9,17 @@ public class BasketBall implements Game {
     private DataSource dataSource;
 
     public BasketBall(Team home, Team away) {
-        System.out.println("Game constructor called");
         this.home = home;
         this.away = away;
     }
 
+    public BasketBall() {}
+
     @Override
-    public void playGame() {
-        System.out.println(Math.random() < 0.5 ? home.getName(): away.getName());
-    }
-
-    @PostConstruct
-    public void init() {
-        System.out.println("Play National Anthem");
-    }
-
-    @PreDestroy
-    public void destroy() {
-        System.out.println("Distribute trophy");
+    public String playGame() {
+        String result = Math.random() < 0.5 ? home.getName(): away.getName();
+        System.out.println(result);
+        return result;
     }
 
     public Team getHome() {
@@ -44,7 +35,6 @@ public class BasketBall implements Game {
     }
 
     public void setHome(Team home) {
-        System.out.println("Home setter is called");
         this.home = home;
     }
 
@@ -53,7 +43,11 @@ public class BasketBall implements Game {
     }
 
     public void setAway(Team away) {
-        System.out.println("Away setter is called");
         this.away = away;
+    }
+
+    @Override
+    public String toString(){
+        return "I am game";
     }
 }

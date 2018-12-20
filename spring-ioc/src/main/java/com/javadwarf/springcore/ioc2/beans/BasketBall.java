@@ -9,6 +9,7 @@ public class BasketBall implements Game {
     private DataSource dataSource;
 
     public BasketBall(Team home, Team away) {
+
         this.home = home;
         this.away = away;
     }
